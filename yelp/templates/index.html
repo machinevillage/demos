@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+
+}
+
+h2 {
+  text-align: center;
+
+}
+
+body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+a, h1, h2       { color: #377ba8; }
+h1, h2          { margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+
+.male th {
+    background-color: #add8e6;
+    color: white;
+}
+
+.female th {
+    background-color: #77dd77;
+    color: white;
+}
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+tr:hover            { background-color: #ffff99;}
+
+
+</style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+ </head>
+ <body>
+  <form method="POST" action="/response">
+	  <h2> Enter a restaurant <input type="text" name="rest" {% if rest %} value={{rest}} {% endif %} required><br></h2>
+	  <h2> Enter a location <input type="text" name="loc" {% if loc %} value={{loc}} {% endif %} required><br></h2>
+   <input type="submit" value="Submit">
+  </form>
+  
+
+  {% if rest  %}
+  <h1>{{rest}} reviews: </h1>
+
+  {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+  {% endfor %}
+  
+  {% endif %}
+
+  {% if note %}
+  <p>{{note}}</p>
+  {% endif %}
+
+  {% for your_list_element in hand %}
+  <!--   <p>{{ your_list_element }} </p> -->
+  {% endfor %}
+
+ </body>
+</html>
+

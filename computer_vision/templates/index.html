@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<style> 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+
+
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+ </head>
+ <body>
+  <form method="POST" action="/response">
+	  <h2> Enter the URL of an image <input type="text" name="url" required><br></h2>
+
+   <input type="submit" value="Submit">
+  </form>
+
+
+  {% if note %}
+  <h1>Model Prediction: </h1>
+  <h2> {{note}} </h2>
+  <img src={{url}} style="width:800px;height:600px;" class="center">
+  {% endif %}
+ </body>
+</html>
+
