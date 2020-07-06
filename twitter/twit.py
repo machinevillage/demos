@@ -6,10 +6,10 @@ from textblob import TextBlob
 #import matplotlib.pyplot as plt
 #%matplotlib inline
 
-ckey = '6TV8FomzcjTrFybUSp9JqEDsI'
-csecret = 'akuOfv9HkkL8LoKjtsjlllxjlbERID1tbaBNJMOCAOXdkoxtE7'
-atoken = '1874091007-yloQAYYisQ3PfH9yAYcMTrC6nU9q0nx2IXFurYt'
-asecret = 'MIbc6E39X0iu7lg5UjtUPPSJNSm589TfFOuS20zGGrrUh'
+ckey = 
+csecret = 
+atoken = 
+asecret = 
 
 auth = tweepy.OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
